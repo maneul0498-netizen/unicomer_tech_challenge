@@ -21,6 +21,11 @@ docker run -e ADDRESS_HTTP=:8080 -p 8080:8080 unicomer_tech_challenge
 ```
 - En el navegador habrir la url http://localhost:8080/api/v1/swagger/index.html para ver la documentacion del endpoint REST
 
-
+- Peticion que acepta json
+```bash
 curl -X GET http://localhost:8080/api/v1 -H 'Accept: application/json'
+```
+- Peticion que acepta xml
+```bash
 curl -X GET http://localhost:8080/api/v1 -H 'Accept: application/xml'
+```
