@@ -20,7 +20,7 @@ func (r *Router) InitRouters() {
 
 func (r *Router) initV1Routers() {
 
-	h := r.Eng.Group("/api/v1")
+	h := r.Eng.Group("/api/v1/holidays")
 	{
 		h.GET("", r.Handler.Get)
 	}

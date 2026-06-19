@@ -9,7 +9,6 @@ import (
 
 func TestLoadCache(t *testing.T) {
 	s := service.NewService()
-	_, err := s.LoadCache()
+	err := s.LoadCache()
 	require.NoError(t, err)
-
 }

@@ -9,8 +9,12 @@
     "host": "localhost:8080",
     "basePath": "/api/v1/",
     "paths": {
-        "/": {
+        "/holidays": {
             "get": {
+                "produces": [
+                    "application/json",
+                    "text/xml"
+                ],
                 "tags": [
                     "HolyDays"
                 ],
@@ -18,10 +22,23 @@
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "filter",
-                        "name": "filter",
-                        "in": "path",
+                        "description": "fromDate (YYYY-MM-DD)",
+                        "name": "fromDate",
+                        "in": "query",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "toDate (YYYY-MM-DD)",
+                        "name": "toDate",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "holiday type",
+                        "name": "type",
+                        "in": "query"
                     },
                     {
                         "type": "string",

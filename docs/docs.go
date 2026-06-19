@@ -15,8 +15,12 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/": {
+        "/holidays": {
             "get": {
+                "produces": [
+                    "application/json",
+                    "text/xml"
+                ],
                 "tags": [
                     "HolyDays"
                 ],
@@ -24,10 +28,23 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "filter",
-                        "name": "filter",
-                        "in": "path",
+                        "description": "fromDate (YYYY-MM-DD)",
+                        "name": "fromDate",
+                        "in": "query",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "toDate (YYYY-MM-DD)",
+                        "name": "toDate",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "holiday type",
+                        "name": "type",
+                        "in": "query"
                     },
                     {
                         "type": "string",

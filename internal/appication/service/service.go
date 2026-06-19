@@ -7,7 +7,7 @@ import (
 )
 
 type Service struct {
-	data interface{}
+	data []byte
 }
 
 func NewService() IService {
@@ -16,10 +16,10 @@ func NewService() IService {
 	return s
 }
 
-func (s *Service) LoadCache() (interface{}, error) {
-	log.Println("getting data")
+func (s *Service) LoadCache() error {
+	log.Println("getting cache data")
 
-	url := "https://api.victorsanmartin.com/feriados/en.json"
+	url := "https://api.victorsanmartin.com/holidays/en.json"
 	method := "GET"
 
 	client := &http.Client{}
@@ -27,14 +27,14 @@ func (s *Service) LoadCache() (interface{}, error) {
 
 	if err != nil {
 		log.Println(err)
-		return nil, err
+		return err
 	}
 
 	res, err := client.Do(req)
 
 	if err != nil {
 		log.Println(err)
-		return nil, err
+		return err
 	}
 
 	defer res.Body.Close()
@@ -43,15 +43,13 @@ func (s *Service) LoadCache() (interface{}, error) {
 
 	if err != nil {
 		log.Println(err)
-		return nil, err
+		return err
 	}
 
-	log.Println(string(body))
-
 	s.data = body
-	return s.data, nil
+	return nil
 }
 
-func (s *Service) Get() (interface{}, error) {
-	return s.data, nil
+func (s *Service) Get() []byte {
+	return s.data
 }

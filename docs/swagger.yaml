@@ -6,18 +6,30 @@ info:
   title: Unicomer tech challenge
   version: "1.0"
 paths:
-  /:
+  /holidays:
     get:
       parameters:
-      - description: filter
-        in: path
-        name: filter
+      - description: fromDate (YYYY-MM-DD)
+        in: query
+        name: fromDate
         required: true
+        type: string
+      - description: toDate (YYYY-MM-DD)
+        in: query
+        name: toDate
+        required: true
+        type: string
+      - description: holiday type
+        in: query
+        name: type
         type: string
       - description: application/json or application/xml
         in: header
         name: Accept
         type: string
+      produces:
+      - application/json
+      - text/xml
       responses: {}
       summary: Get
       tags:
