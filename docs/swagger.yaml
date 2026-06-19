@@ -1,0 +1,21 @@
+basePath: /api/v1/
+host: localhost:8080
+info:
+  contact: {}
+  description: Tech Challenge
+  title: Unicomer tech challenge
+  version: "1.0"
+paths:
+  /:
+    get:
+      parameters:
+      - description: filter
+        in: path
+        name: filter
+        required: true
+        type: string
+      responses: {}
+      summary: Get
+      tags:
+      - Tag
+swagger: "2.0"
