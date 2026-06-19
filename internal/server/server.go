@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/maneul0498-netizen/unicomer_tech_challenge/internal/appication/service"
 	"github.com/maneul0498-netizen/unicomer_tech_challenge/internal/interfaces/http/handler"
 )
 
@@ -33,7 +34,8 @@ func New() (*Server, error) {
 	eng.Use(gin.Logger())
 	eng.Use(gin.Recovery())
 
-	handler := handler.NewHandler()
+	service := service.NewService()
+	handler := handler.NewHandler(service)
 
 	r := Router{
 		Eng:     eng,

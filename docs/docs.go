@@ -18,7 +18,7 @@ const docTemplate = `{
         "/": {
             "get": {
                 "tags": [
-                    "Tag"
+                    "HolyDays"
                 ],
                 "summary": "Get",
                 "parameters": [
@@ -28,6 +28,12 @@ const docTemplate = `{
                         "name": "filter",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "application/json or application/xml",
+                        "name": "Accept",
+                        "in": "header"
                     }
                 ],
                 "responses": {}

@@ -14,8 +14,12 @@ paths:
         name: filter
         required: true
         type: string
+      - description: application/json or application/xml
+        in: header
+        name: Accept
+        type: string
       responses: {}
       summary: Get
       tags:
-      - Tag
+      - HolyDays
 swagger: "2.0"
