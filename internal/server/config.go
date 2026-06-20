@@ -10,6 +10,8 @@ type config struct {
 
 	ReadTimeout  int64 `envconfig:"READ_TIMEOUT"`
 	WriteTimeout int64 `envconfig:"WRITE_TIMEOUT"`
+
+	BOOSTR_URL string `envconfig:"BOOSTR_URL"`
 }
 
 // ConfigFromEnv ...

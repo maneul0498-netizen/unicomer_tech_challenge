@@ -34,7 +34,7 @@ func New() (*Server, error) {
 	eng.Use(gin.Logger())
 	eng.Use(gin.Recovery())
 
-	service := service.NewService()
+	service := service.NewService(serverConf.BOOSTR_URL)
 	handler := handler.NewHandler(service)
 
 	r := Router{

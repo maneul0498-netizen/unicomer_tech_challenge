@@ -13,6 +13,7 @@
             "program": "${workspaceFolder}/cmd/api/main.go",
             "env": {
                 "ADDRESS_HTTP": ":8080",
+                "BOOSTR_URL": "https://api.victorsanmartin.com/holidays/en.json",
                 "READ_TIMEOUT":  "5",
 		        "WRITE_TIMEOUT": "5",
             }

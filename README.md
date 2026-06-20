@@ -11,6 +11,10 @@ git clone https://github.com/maneul0498-netizen/unicomer_tech_challenge.git
 ```bash
 cd unicomer_tech_challenge
 ```
+- Ejecutar pruebas unitarias
+```bash
+go test -v ./...
+```
 ---
 - Ejecutar la construccion de la imagen con docker
 
@@ -18,9 +22,9 @@ cd unicomer_tech_challenge
 docker build -t unicomer_tech_challenge .
 ```
 ---
-- Ejecutar la imagen generada con la variable de entorno ADDRESS_HTTP establecida
+- Ejecutar la imagen generada con las variables de entorno ADDRESS_HTTP y BOOSTR_URL establecidas
 ```bash
-docker run -e ADDRESS_HTTP=:8080 -p 8080:8080 unicomer_tech_challenge
+docker run -e ADDRESS_HTTP=:8080 -e BOOSTR_URL=https://api.victorsanmartin.com/holidays/en.json -p 8080:8080 unicomer_tech_challenge
 ```
 ---
 - En el navegador habrir la url http://localhost:8080/api/v1/swagger/index.html para ver la documentacion del endpoint REST

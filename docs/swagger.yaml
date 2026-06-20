@@ -1,4 +1,14 @@
 basePath: /api/v1/
+definitions:
+  http.ErrorResponse:
+    properties:
+      code:
+        example: 404
+        type: integer
+      message:
+        example: wallet not found
+        type: string
+    type: object
 host: localhost:8080
 info:
   contact: {}
@@ -30,7 +40,11 @@ paths:
       produces:
       - application/json
       - text/xml
-      responses: {}
+      responses:
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/http.ErrorResponse'
       summary: Get
       tags:
       - HolyDays
