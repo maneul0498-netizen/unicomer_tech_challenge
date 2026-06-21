@@ -6,7 +6,7 @@ definitions:
         example: 404
         type: integer
       message:
-        example: wallet not found
+        example: error
         type: string
     type: object
 host: localhost:8080
@@ -22,12 +22,10 @@ paths:
       - description: fromDate (YYYY-MM-DD)
         in: query
         name: fromDate
-        required: true
         type: string
       - description: toDate (YYYY-MM-DD)
         in: query
         name: toDate
-        required: true
         type: string
       - description: holiday type
         in: query

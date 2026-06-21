@@ -7,7 +7,9 @@ git clone https://github.com/maneul0498-netizen/unicomer_tech_challenge.git
 ```
 ---
 ## 📌 Intrucciones de arranque
+
 - Moverse a la raiz del proyecto
+
 ```bash
 cd unicomer_tech_challenge
 ```
@@ -42,3 +44,11 @@ curl --location 'http://localhost:8080/api/v1/holidays?fromDate=2026-12-08&toDat
 curl --location 'http://localhost:8080/api/v1/holidays?fromDate=2026-12-08&toDate=2026-12-31&type=Civil' -H 'Accept: application/xml'
 ```
 - Observe que se realiza filtro por fecha y tipo de festivo
+---
+- Los filtros no son obligatorios
+```bash
+curl --location 'http://localhost:8080/api/v1/holidays' -H 'Accept: application/json'
+```
+---
+```bash
+curl --location 'http://localhost:8080/api/v1/holidays' -H 'Accept: application/xml'

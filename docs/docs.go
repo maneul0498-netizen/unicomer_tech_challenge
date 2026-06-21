@@ -30,15 +30,13 @@ const docTemplate = `{
                         "type": "string",
                         "description": "fromDate (YYYY-MM-DD)",
                         "name": "fromDate",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "toDate (YYYY-MM-DD)",
                         "name": "toDate",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "string",
@@ -74,7 +72,7 @@ const docTemplate = `{
                 },
                 "message": {
                     "type": "string",
-                    "example": "wallet not found"
+                    "example": "error"
                 }
             }
         }

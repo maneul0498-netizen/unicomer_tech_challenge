@@ -54,6 +54,41 @@ func TestFilterByDateRange(t *testing.T) {
 
 }
 
+func TestFilterByDateRangeWrongDates(t *testing.T) {
+	holiDays := dto.HoliDays{
+		dto.HoliDay{
+			Date:        "2026-01-01",
+			Title:       "Año Nuevo",
+			Type:        "Civil",
+			Inalienable: true,
+			Extra:       "Civil e Irrenunciable",
+		},
+		dto.HoliDay{
+			Date:        "2026-04-03",
+			Title:       "Viernes Santo",
+			Type:        "Civil",
+			Inalienable: false,
+			Extra:       "Civil",
+		},
+		dto.HoliDay{
+			Date:        "2026-04-04",
+			Title:       "Sábado Santo",
+			Type:        "Civil",
+			Inalienable: false,
+			Extra:       "Civil",
+		},
+	}
+
+	//wrong date
+	_, err := service.FilterByDateRange(holiDays, "2026-01-011", "2026-04-04")
+	require.Error(t, err)
+
+	//wrong date
+	_, err = service.FilterByDateRange(holiDays, "2026-01-01", "2026-04-044")
+	require.Error(t, err)
+
+}
+
 func TestFilterByType(t *testing.T) {
 	holiDays := dto.HoliDays{
 		dto.HoliDay{

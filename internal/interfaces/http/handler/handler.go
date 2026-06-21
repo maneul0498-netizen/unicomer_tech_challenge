@@ -22,11 +22,12 @@ func NewHandler(s service.IService) *Handler {
 // GetUser godoc
 // @Summary Get
 // @Tags HolyDays
-// @Param fromDate query string true "fromDate (YYYY-MM-DD)"
-// @Param toDate query string true "toDate (YYYY-MM-DD)"
+// @Param fromDate query string false "fromDate (YYYY-MM-DD)"
+// @Param toDate query string false "toDate (YYYY-MM-DD)"
 // @Param type query string false "holiday type"
 // @Param Accept header string false "application/json or application/xml"
-// @Produce json,xml
+// @Produce json
+// @Produce xml
 // @Failure 500 {object} http.ErrorResponse
 // @Router /holidays [get]
 func (h *Handler) Get(c *gin.Context) {
