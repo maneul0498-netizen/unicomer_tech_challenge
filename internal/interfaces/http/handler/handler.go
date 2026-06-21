@@ -19,9 +19,9 @@ func NewHandler(s service.IService) *Handler {
 	}
 }
 
-// GetUser godoc
+// Holidays godoc
 // @Summary Get
-// @Tags HolyDays
+// @Tags HoliDays
 // @Param fromDate query string false "fromDate (YYYY-MM-DD)"
 // @Param toDate query string false "toDate (YYYY-MM-DD)"
 // @Param type query string false "holiday type"
