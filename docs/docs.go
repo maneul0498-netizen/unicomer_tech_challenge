@@ -22,7 +22,7 @@ const docTemplate = `{
                     "text/xml"
                 ],
                 "tags": [
-                    "HolyDays"
+                    "HoliDays"
                 ],
                 "summary": "Get",
                 "parameters": [
@@ -52,6 +52,15 @@ const docTemplate = `{
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/http.HoliDay"
+                            }
+                        }
+                    },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
@@ -73,6 +82,26 @@ const docTemplate = `{
                 "message": {
                     "type": "string",
                     "example": "error"
+                }
+            }
+        },
+        "http.HoliDay": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "extra": {
+                    "type": "string"
+                },
+                "inalienable": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
                 }
             }
         }

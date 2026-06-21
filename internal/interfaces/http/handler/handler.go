@@ -28,6 +28,7 @@ func NewHandler(s service.IService) *Handler {
 // @Param Accept header string false "application/json or application/xml"
 // @Produce json
 // @Produce xml
+// @Success 200 {object} http.HoliDays
 // @Failure 500 {object} http.ErrorResponse
 // @Router /holidays [get]
 func (h *Handler) Get(c *gin.Context) {
